@@ -84,7 +84,7 @@
 // 3.
 // // a.
 // let libra = 20
-// let quilo = lbra * 0.453592
+// let quilo = libra * 0.453592
 // console.log(quilo)
 // // b.
 // let once = 10.5
