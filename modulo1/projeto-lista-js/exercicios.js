@@ -39,52 +39,78 @@ function imprimeIdade() {
 
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
-  // const peso1 = 85
-  // const altura1 = 1.8
-  // const imc = peso
+
+  const calculo = peso / (altura * altura)
+  return calculo 
+  console.log(calculaIMC)
+
 
 }
 
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
-  // implemente sua lógica aqui
-  // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
+
+  const nome = prompt("Qual é o seu nome?")
+  const idade = prompt("Qual é a sua idade?")
+  const email = prompt("Qual é o seu e-mail?")
+
+  console.log(`Meu nome é ${nome}, tenho ${idade} anos, e o meu email é ${email}.`)
 
 }
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
-  // implemente sua lógica aqui
 
+const corFavorita1 = prompt("Qual sua 1º cor favorita?")
+const corFavorita2 = prompt("Qual sua 2º cor favorita?")
+const corFavorita3 = prompt("Qual sua 3º cor favorita?")
+const coresFavoritas = [corFavorita1,corFavorita2,corFavorita3]
+
+console.log(coresFavoritas)
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
-  // implemente sua lógica aqui
+
+const letraMaiuscula = string.toUpperCase()
+return letraMaiuscula
 
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
-  // implemente sua lógica aqui
+
+const ingressosVendidos = custo / valorIngresso
+return ingressosVendidos
 
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
-  // implemente sua lógica aqui
+
+  const valor1 = string1.lenght
+  const valor2 = string2.lenght
+  const mesmoTamanho = valor1 === valor2
+
+  return mesmoTamanho
+  // console.log(mesmoTamanho)
+
 
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
-  // implemente sua lógica aqui
+  
+  const retorno = array[0]
+  return retorno
 
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
-  // implemente sua lógica aqui
+  
+  const retornoUltimo = array[4]
+  return retornoUltimo
 
 }
 
