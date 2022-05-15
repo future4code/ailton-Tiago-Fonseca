@@ -88,12 +88,11 @@ return ingressosVendidos
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
 
-  const valor1 = string1.lenght
-  const valor2 = string2.lenght
+  let valor1 = string1.lenght
+  let valor2 = string2.lenght
   const mesmoTamanho = valor1 === valor2
 
   return mesmoTamanho
-  // console.log(mesmoTamanho)
 
 
 }
@@ -109,32 +108,57 @@ function retornaPrimeiroElemento(array) {
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   
-  const retornoUltimo = array[4]
+  const retornoUltimo = array[array.length - 1]
   return retornoUltimo
 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
 
+  const primeiroLista = array.shift()
+  const ultimoLista = array.pop ()
+  array.unshift(ultimoLista)
+  array.push(primeiroLista)
+
+  return array 
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  // implemente sua lógica aqui
+  
+  let primeira = string1.toLowerCase()
+  let segunda = string2.toLowerCase()
 
+  const compararStrings = primeira === segunda
+
+  return compararStrings
+  // console.log (compararStrings)
+  
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
-  // implemente sua lógica aqui
+
+  const anoAtual = Number(prompt("Qual é o ano atual?"))
+  const anoNascimento = Number(prompt('Qula é o seu ano de nascimento?'))
+  const anoCarteira = Number(prompt("Qual o ano que foi emitido sua carteira identidade?"))
+
+  const menorDe20 = (anoAtual - anoNascimento) <= 20
+  const maiorDe20 = (anoAtual - anoNascimento) >= 50
+  const maiorDe50 = (anoAtual - anoNascimento) > 50
+  const carteira5 = (anoAtual - anoCarteira) >= 5
+  const carteira10 = (anoAtual - anoCarteira) >= 10
+  const carteira15 = (anoAtual - anoCarteira) >= 15
+
+  console.log(carteira5 , carteira10 , carteira15)
+
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
+
 
 }
 
