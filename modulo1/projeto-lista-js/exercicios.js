@@ -88,8 +88,8 @@ return ingressosVendidos
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
 
-  let valor1 = string1.lenght
-  let valor2 = string2.lenght
+  const valor1 = string1.lenght
+  const valor2 = string2.lenght
   const mesmoTamanho = valor1 === valor2
 
   return mesmoTamanho
@@ -151,7 +151,11 @@ function checaRenovacaoRG() {
   const carteira10 = (anoAtual - anoCarteira) >= 10
   const carteira15 = (anoAtual - anoCarteira) >= 15
 
-  console.log(carteira5 , carteira10 , carteira15)
+  const resposta = carteira5 && carteira10 && carteira15
+  const resposta1 = menorDe20 && maiorDe20 && maiorDe50
+  const respostaFinal = resposta && resposta1
+
+  console.log(respostaFinal)
 
 
 }
@@ -159,12 +163,12 @@ function checaRenovacaoRG() {
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
 
-  let anoBissexto1 = ano % 400 === 0 
-  let anoBissexto2 = ano % 4 === 0
-  let anoNaoBissexto = ano % 100 != 0
-  let resultado = anoBissexto1 || anoBissexto2 || anoNaoBissexto
+  const anoBissexto1 = ano % 400 === 0 
+  const anoBissexto2 = ano % 4 === 0 
+  const anoNaoBissexto = (ano % 100 != 0)
+  const resultado = anoBissexto1 && anoBissexto2 
 
- console.log(resultado)
+  return resultado
 }
 
 // EXERCÍCIO 15
