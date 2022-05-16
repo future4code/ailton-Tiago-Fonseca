@@ -159,11 +159,28 @@ function checaRenovacaoRG() {
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
 
+  let anoBissexto1 = ano % 400 === 0 
+  let anoBissexto2 = ano % 4 === 0
+  let anoNaoBissexto = ano % 100 != 0
+  let resultado = anoBissexto1 || anoBissexto2 || anoNaoBissexto
 
+ console.log(resultado)
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
-  // implemente sua lógica aqui
+
+  const idade = prompt("Você tem mais de 18 anos?")
+  const escolaridade = prompt("Você possui ensino médio completo?")
+  const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+
+  const positivo = "sim"
+  const respostaIdade = idade === positivo
+  const respostaEscola = escolaridade === positivo
+  const respostaDispo = disponibilidade === positivo
+
+  const resposta = respostaIdade && respostaEscola && respostaDispo
+
+  console.log(resposta)
 
 }
