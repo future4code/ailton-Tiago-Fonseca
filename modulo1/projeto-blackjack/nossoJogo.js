@@ -21,11 +21,13 @@
    }
 
    const carta = comprarCarta(); 
+   const carta1 = comprarCarta();
+
    let usuario = carta.valor
-   let computador = carta.valor
+   let computador = carta1.valor
 
    console.log(`Usuário - cartas: ${carta.texto}  - pontuação ${carta.valor}`)
-   console.log(`Computador - cartas: ${carta.texto}  - pontuação ${carta.valor}`)
+   console.log(`Computador - cartas: ${carta1.texto}  - pontuação ${carta1.valor}`)
 
 
    if(usuario > computador) {
