@@ -10,35 +10,39 @@
  * 
  * 
  */
+    const carta = comprarCarta(); 
+    const carta1 = comprarCarta();
+    const cartaComputador = comprarCarta();
+ 
+    let usuario = carta.valor
+    let computador = carta1.valor
 
-   if(confirm("Quer iniciar uma nova rodada?")) {
+   if(confirm(`Bem-vinde ao jogo de Blackjack!
+Quer iniciar uma nova rodada?`)) {
 
-       console.log("Boas vindas ao jogo de Blackjack!")
+       confirm(`Suas cartãs são ${carta.texto} ${carta1.texto}. A carta revelada do computador é ${cartaComputador.texto}.
+Deseja comparar uma carta? `)
     
    } else {
-       console.log("O jogo acabou")
+       confirm("O jogo acabou.")
     
    }
 
-   const carta = comprarCarta(); 
-   const carta1 = comprarCarta();
+ 
 
-   let usuario = carta.valor
-   let computador = carta1.valor
-
-   console.log(`Usuário - cartas: ${carta.texto}  - pontuação ${carta.valor}`)
-   console.log(`Computador - cartas: ${carta1.texto}  - pontuação ${carta1.valor}`)
+   // console.log(`Usuário - cartas: ${carta.texto}  - pontuação ${carta.valor}`)
+   // console.log(`Computador - cartas: ${carta1.texto}  - pontuação ${carta1.valor}`)
 
 
-   if(usuario > computador) {
-      console.log("O usuário ganhou!")
+   // if(usuario > computador) {
+   //    console.log("O usuário ganhou!")
 
-   }else if(computador > usuario)  { 
-      console.log("O computador ganhou!")
+   // }else if(computador > usuario)  { 
+   //    console.log("O computador ganhou!")
 
-   } else { 
-      console.log("Empate!")
-   }
+   // } else { 
+   //    console.log("Empate!")
+   // }
 
 
 
