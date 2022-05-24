@@ -15,23 +15,23 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  return array.prototype.sort()
+  return array.sort((a,b) => a - b)
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    const numerosPares = array.filter((par) => {
-        return par % 2 === 0
-        
-    })
-    
-}
+    const numerosPares = array.filter(numero => numero % 2 === 0) 
+    return numerosPares
+    }
 
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
-}
+    const numerosPares = array.filter(numero => numero % 2 === 0) 
+    const numerosParesElevados = numerosPares.map(numero => numero ** 2)
+    return numerosParesElevados
+    }
+   
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
