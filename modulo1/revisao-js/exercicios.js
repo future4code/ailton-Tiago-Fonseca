@@ -47,8 +47,13 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+  const numeros = [num1,num2]
+  let maiorNumero = Math.max(...numeros); 
+  let maiorDivisivelPorMenor = maiorNumero / Math.min(...numeros) === 0;
+  let diferenca = 
 }
+ }
+
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
@@ -62,8 +67,16 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+  let maiorNum = Math.max(...array);
+  let comparador = array[0];
+  for(let i = 0; i < array.length; i++) {
+    if (array[i > comparador && array[i;] != maiorNum]) {
+      comparador = array[i]
+    }
+  }
+  return console.log(comparador);
 }
+retornaSegundoMaiorESegundoMenor([1,2,3,4,5]);
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
