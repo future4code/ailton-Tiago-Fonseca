@@ -65,13 +65,17 @@ h2 {
     font-size: 20px;
 
    }
-
-tr {
+div {
+    border: 1px white
+    margin 0 auto;
+    /* width: 50vw; */
     color: white;
     text-align: center;
-    font-family: ;
-    margin: 10px 10px 10px 10px;
+    /* display: block; */
     padding:30px;
+}
+tr {
+    
     
 }
 
