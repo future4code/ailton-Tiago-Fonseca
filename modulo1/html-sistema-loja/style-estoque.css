@@ -1,0 +1,119 @@
+.titulo {
+    font-family: Optima, sans-serif;
+    color: rgb(58, 1, 63);
+    text-align: center;
+    font-size: 80px;
+    display: block;
+    padding: 0  0  0;
+
+}
+
+   
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.imagem {
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float:left;
+    width:100%;
+    /* background:url(../imagens/corpo/imagen.jpg) repeat-x top center */
+}
+
+.indice {
+    text-align: center;
+    color: white;
+    font-family:Verdana, sans-serif;
+    font-size: 13px;
+
+}
+
+a:link {
+    background: none;
+    color: rgb(129, 115, 75);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px;
+    
+   }
+ 
+a:visited {
+    color: #8d8644;  
+   } 
+
+a:hover {
+    color: rgb(201, 199, 154);
+    font-weight: bold;
+   }
+
+
+p {
+    color: white;
+    text-align: center;
+    font-family: ;
+   }
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+
+   }
+div {
+    border: 1px white
+    margin 0 auto;
+    /* width: 50vw; */
+    color: white;
+    text-align: center;
+    /* display: block; */
+    padding:30px;
+}
+tr {
+    
+    
+}
+
+.iXR {
+    weight: 400px;
+    width:  400px;
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+}
+
+.i11 {
+    weight: 400px;
+    width:  400px;
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+}
+
+.i12 {
+    weight: 400px;
+    width:  400px;
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+}
+
+.i13 {
+    weight: 400px;
+    width:  400px;
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+}
+.i13pro {
+    weight: 400px;
+    width:  400px;
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+}
