@@ -142,15 +142,14 @@ td button:hover {
     font-size: 10px;
     color: black;
     margin: 0 auto;
-    max-width: 100px;
-    text-align: center;
     display: block;
-    
-    
 }
-
+li {
+    list-style: decimal;
+}
 #back-button:hover {
     background-color: #635a3d
+
 }
 
 .img {
