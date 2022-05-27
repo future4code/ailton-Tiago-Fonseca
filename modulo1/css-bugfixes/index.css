@@ -19,6 +19,8 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 button:focus {
@@ -53,6 +55,8 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .icone {
@@ -100,6 +104,8 @@ div:last-child {
 table {
     width: 60%;
     margin: 0 auto;
+    text-align: center;
+
 }
 
 td button {
@@ -109,6 +115,14 @@ td button {
     border-radius: 5px;
     color: black;
     
+}
+
+td button:active {
+    color: white;
+}
+
+td button:hover {
+    background-color: #fce996;
 }
 
 .container-do-search {
@@ -125,10 +139,33 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin: 0 auto;
+    max-width: 100px;
+    text-align: center;
+    display: block;
+    
     
 }
 
 #back-button:hover {
     background-color: #635a3d
 }
-g
+
+.img {
+    width:  10px;
+    height: 10px;
+}
+.img1 {
+    width:  10px;
+    height: 10px;
+}
+.img2 {
+    width:  10px;
+    height: 10px;
+}
+
+.lupa {
+    width:  30px;
+    height: 30px;
+    
+}
