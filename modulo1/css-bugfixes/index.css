@@ -142,8 +142,8 @@ td button:hover {
     font-size: 10px;
     color: black;
     margin: 0 auto;
-    display: block;
 }
+
 li {
     list-style: decimal;
 }
@@ -167,6 +167,17 @@ li {
 
 .lupa {
     width:  30px;
-    height: 30px;
-    
+    height: 30px;   
 }
+
+.lupa:hover {
+    opacity: 0.6; 
+}
+.lupa:active {
+    opacity: 1; 
+}
+.
+/* .buscalupa {
+    border:none!important;
+    background-color: white!important; */
+
