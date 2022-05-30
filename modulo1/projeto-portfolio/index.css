@@ -3,56 +3,166 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 #conteiner {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    
+    padding: 20px;
+    margin: 30px;
 }
 
 header {
     display: flex;
-    height: 30vh;
-    align-items:stretch;
+    height: 10vh;
     justify-content: space-between;
     padding: 0 8px;
-    background-color: aqua;
+}
 
+nav {
+    align-self: center;
+    padding: 8px 8px;
 }
 .logo {
-    height: 15px;
-    width: 15px;
-
+    height: 10vh;
+    width: 10vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-items: center;
+    margin: 12;
 }
 
-.div1 {
+.logo:hover{
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px;
+   }
+
+a {
+    color: black;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-items: center;
+    padding: 8px 8px;
+   }
    
-    flex-direction: row-reverse;
-    /* justify-content: center; */
-    /* justify-content:center;  */
-        /* width: 135px; */
-    /* display: flex; */
-    /* gap: 16px; */
+a:active {
+    color:rgb(128, 123, 192); 
+   }
+a:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color:rgb(128, 123, 192); 
+}   
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    }
+
+h5 {
+    font-size: 30px;
+    margin: 30px;
 }
-main{
-    height: 80vh;
+.divimg {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+    
 }
 
-.logo {
-    flex-direction: row;
-    justify-content: start;
-}
 .foto {
     display: flex;
-    justify-content: center;
-    height: 50%;
-    width: 50%;
-    /* align-items: flex-start; */
-    flex: 0 1 auto;
+    height: 35vh;
+    width: 35vh;
+    align-items:center;
 }
 
+.div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex
+}
+
+.projetos {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction:row;
+}
+
+.habilidades {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction:row;
+}
+
+.instituicoes {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction:row;
+    align-self: center;
+}
+
+.formulario {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction:row;
+}
+
+
+
+
+
+
+
+
+
 footer{
+    display:flex ;
     height: 10vh;
+}
+.git {
+    height: 8vh;
+    width: 8vh;
+}
+
+.dri {
+    height: 8vh;
+    width: 8vh;;
+}
+.lin {
+    height: 8vh;
+    width: 8vh;
+}
+.fac {
+    height: 8vh;
+    width: 8vh;
+}
+.ins {
+    height: 8vh;
+    width: 8vh;
+}
+.twi {
+    height: 8vh;
+    width: 8vh;
 }
