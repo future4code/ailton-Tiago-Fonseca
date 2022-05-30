@@ -1,0 +1,58 @@
+/* Pagina Home */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#conteiner {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+header {
+    display: flex;
+    height: 30vh;
+    align-items:stretch;
+    justify-content: space-between;
+    padding: 0 8px;
+    background-color: aqua;
+
+}
+.logo {
+    height: 15px;
+    width: 15px;
+
+}
+
+.div1 {
+   
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+    /* justify-content:center;  */
+        /* width: 135px; */
+    /* display: flex; */
+    /* gap: 16px; */
+}
+main{
+    height: 80vh;
+}
+
+.logo {
+    flex-direction: row;
+    justify-content: start;
+}
+.foto {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    /* align-items: flex-start; */
+    flex: 0 1 auto;
+}
+
+footer{
+    height: 10vh;
+}
