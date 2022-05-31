@@ -65,17 +65,22 @@ a:hover {
 
 main {
     display: flex;
-    height: 100vh;
+    height: 500px;  
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     }
+p {
+    text-align: center;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 h5 {
     font-size: 30px;
     margin: 30px;
 }
 .divimg {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center
@@ -90,10 +95,11 @@ h5 {
 }
 
 .div {
-    display: flex;
+    display: contents;
     flex-direction: row;
     justify-content: start;
-    flex
+    align-items:flex-start;
+    flex: 1 2 auto;
 }
 
 .projetos {
@@ -102,6 +108,7 @@ h5 {
     width: 100px;
     display: flex;
     flex-direction:row;
+    align-items:flex-start;
 }
 
 .habilidades {
@@ -139,7 +146,11 @@ h5 {
 
 footer{
     display:flex ;
-    height: 10vh;
+    height: 20vh;
+}
+
+.acompanhe {
+    
 }
 .git {
     height: 8vh;
