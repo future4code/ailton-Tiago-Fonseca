@@ -30,6 +30,7 @@ export default class App extends React.Component {
                 <option>Cursos de inglês</option>
                 <option>Não fiz curso complementar</option>
             </select>
+        
        </Dive>
 
 )}

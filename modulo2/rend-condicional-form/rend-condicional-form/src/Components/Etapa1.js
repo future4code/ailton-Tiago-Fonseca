@@ -41,6 +41,7 @@ export default class App extends React.Component {
                 <option>Ensino Superior Incompleto</option>
                 <option>Ensino Superior Completo</option>
               </select>
+             
        </Dive>
 
 )}

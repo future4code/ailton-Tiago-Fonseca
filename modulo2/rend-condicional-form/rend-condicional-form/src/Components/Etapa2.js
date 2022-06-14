@@ -27,6 +27,7 @@ export default class App extends React.Component {
                 value={this.props.inputEnsino}
                 onChange={this.props.onChangeInputEnsino}
             />
+        
        </Dive>
 
 )}

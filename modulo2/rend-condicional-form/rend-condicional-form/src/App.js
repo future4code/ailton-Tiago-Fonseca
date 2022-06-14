@@ -31,22 +31,23 @@ const Botao = styled.div`
     border: 1px solid white;
     background-color: grey;
   } 
-  
+
   input {
     margin: 10px;
   }
 
 select {
   margin: 10px;
+  text-align: center;
 }
 `
 
- export default class App extends React.Component {
+export default class App extends React.Component {
   state = {
     etapa: 1
    };
 
-  renderizaEtapa = () => {
+renderizaEtapa = () => {
     switch(this.state.etapa) {
       case 1:
         return <Etapa1/>;
@@ -63,23 +64,19 @@ select {
     };
   };
 
-  irParaProximaEtapa = () => {
+irParaProximaEtapa = () => {
       this.setState({
         etapa: this.state.etapa + 1
       });
-  };
-ultimaTela = () => {
-  if(this.state.etapa === Etapa3){
-    return 
-  }
-    
-  };
+};
 
   render() {
     return (
        <Botao>
         {this.renderizaEtapa()}
-        <button onClick={this.irParaProximaEtapa}><b>Próxima Etapa</b></button>
+        <button onClick={this.irParaProximaEtapa}>
+            <b>Próxima Etapa</b>
+        </button>
       </Botao>
       );
   };
