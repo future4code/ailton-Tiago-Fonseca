@@ -1,81 +1,87 @@
-import React, { Component } from 'react';
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components'
 
+const AppContainer = styled.div`
+  border: 1px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`
 
-// const Botao = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   background-color: gray;
-//   border-radius: 50px;
-//   border-style: 1px solid gray;
-//   padding: 20px;
-//   width: 400px;
-//   color: white;
-//   margin: 30px 450px;
-//   h3 {
-//     margin: 30px 30px;
-//   }
-//   button {
-//     margin-top: 20px;
-//     margin-bottom: 10px;
-//     padding: 6px;
-//     color: white;
-//     border-radius: 6px;
-//     border: 1px solid white;
-//     background-color: grey;
-//   } 
-  
-//   input {
-//     margin: 10px;
-//   }
-// select {
-//   margin: 10px;
-// }
-// `
+const MessagesContainer = styled.div`
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column-reverse;
+`
 
- export default class App extends React.Component {
-//   state = {
-//     etapa: 1
-//    };
+const InputsContainer = styled.div`
+  display: flex;
+`
 
-//   renderizaEtapa = () => {
-//     switch(this.state.etapa) {
-//       case 1:
-//         return <Etapa1/>;
-//         break;
-//       case 2:
-//         return <Etapa2/>;
-//         break;
-//       case 3:
-//         return <Etapa3/>;
-//         break;  
-//       case 4:
-//         return <Final/>;
-//         break;     
-//     };
-//   };
+const NameInput = styled.input`
+  width: 100px;
+`
 
-//   irParaProximaEtapa = () => {
-//       this.setState({
-//         etapa: this.state.etapa + 1
-//       });
-//   };
-// ultimaTela = () => {
-//   if(this.state.etapa === Etapa3){
-//     return 
-//   }
+const MessageInput = styled.input`
+  flex-grow: 1;
+`
 
-//   };
+class App extends React.Component {
+  state = {
+    messages: [],
+    userValue: '',
+    messageValue: ''
+  }
+
+  onChangeUserValue = (event) => {
+    this.setState({userValue: event.target.value})
+  }
+
+  onChangeMessageValue = (event) => {
+    this.setState({messageValue: event.target.value})
+  }
+
+  sendMessage = () => {
+    const newMessage = {
+      user: this.state.userValue,
+      text: this.state.messageValue
+    }
+
+    const newMessagesArray = [newMessage, ...this.state.messages]
+
+    this.setState({messages: newMessagesArray, messageValue: ''})
+  }
 
   render() {
     return (
-       <Botao>
-        {this.renderizaEtapa()}
-        <button onClick={this.irParaProximaEtapa}><b>Próxima Etapa</b></button>
-      </Botao>
-      );
-  };
+      <AppContainer>
+        <MessagesContainer>
+          {this.state.messages.map((message, index) => {
+            return <p key={index}>
+              <strong>{message.user}</strong>: {message.text}
+            </p>
+          })}
+        </MessagesContainer>
+        <InputsContainer>
+          <NameInput
+            onChange={this.onChangeUserValue} 
+            value={this.state.userValue} 
+            placeholder={'Nome'}
+          />
+          <MessageInput
+            onChange={this.onChangeMessageValue} 
+            value={this.state.messageValue} 
+            placeholder={'Mensagem'}
+          />
+          <button onClick={this.sendMessage}>Enviar</button>
+        </InputsContainer>
+      </AppContainer>
+    );
+  }
+}
 
-};
+export default App;
