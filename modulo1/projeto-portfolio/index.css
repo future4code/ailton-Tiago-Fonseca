@@ -9,11 +9,15 @@
 #conteiner {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height:210vh;
     padding: 20px;
     margin: 30px;
+    
 }
 
+.texto {
+    padding-bottom: 100px;
+}
 header {
     display: flex;
     height: 10vh;
@@ -95,63 +99,89 @@ h5 {
 }
 
 .div {
-    display: contents;
+    display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items:flex-start;
-    flex: 1 2 auto;
+    /* flex: 1 2 auto; */
+    /* background-color: aquamarine; */
 }
 
 .projetos {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
     display: flex;
-    flex-direction:row;
-    align-items:flex-start;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
 }
 
 .habilidades {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
 }
 
 .instituicoes {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
     display: flex;
-    flex-direction:row;
-    align-self: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
 }
 
 .formulario {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 300px;
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    margin: 50px;
 }
 
-
-
-
-
-
-
-
+.mensagem {
+    height: 300px;
+    width: 300px;
+    display: flex;
+   }
+   
+button {
+    height: 50px;
+    width: 60px;
+    justify-content: center;
+}
 
 footer{
-    display:flex ;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    padding-left: 50px;
     height: 20vh;
+    justify-content: start;
+    align-items: center;
 }
 
-.acompanhe {
+ .links {
     
+ padding-top: 20px; 
 }
+
 .git {
     height: 8vh;
     width: 8vh;
