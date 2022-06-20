@@ -1,0 +1,209 @@
+/* Pagina Home */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#conteiner {
+    display: flex;
+    flex-direction: column;
+    height:210vh;
+    padding: 20px;
+    margin: 30px;
+    
+}
+
+.texto {
+    padding-bottom: 100px;
+}
+header {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+nav {
+    align-self: center;
+    padding: 8px 8px;
+}
+.logo {
+    height: 10vh;
+    width: 10vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-items: center;
+    margin: 12;
+}
+
+.logo:hover{
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px;
+   }
+
+a {
+    color: black;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-items: center;
+    padding: 8px 8px;
+   }
+   
+a:active {
+    color:rgb(128, 123, 192); 
+   }
+a:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color:rgb(128, 123, 192); 
+}   
+
+main {
+    display: flex;
+    height: 500px;  
+    flex-direction: column;
+    align-items: center;
+    }
+p {
+    text-align: center;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h5 {
+    font-size: 30px;
+    margin: 30px;
+}
+.divimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+    
+}
+
+.foto {
+    display: flex;
+    height: 35vh;
+    width: 35vh;
+    align-items:center;
+}
+
+.div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
+    /* flex: 1 2 auto; */
+    /* background-color: aquamarine; */
+}
+
+.projetos {
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
+}
+
+.habilidades {
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
+}
+
+.instituicoes {
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: stretch;
+    text-align: center;
+    margin: 50px;
+}
+
+.formulario {
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.mensagem {
+    height: 300px;
+    width: 300px;
+    display: flex;
+   }
+   
+button {
+    height: 50px;
+    width: 60px;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    height: 20vh;
+    justify-content: start;
+    align-items: center;
+}
+
+ .links {
+    
+ padding-top: 20px; 
+}
+
+.git {
+    height: 8vh;
+    width: 8vh;
+}
+
+.dri {
+    height: 8vh;
+    width: 8vh;;
+}
+.lin {
+    height: 8vh;
+    width: 8vh;
+}
+.fac {
+    height: 8vh;
+    width: 8vh;
+}
+.ins {
+    height: 8vh;
+    width: 8vh;
+}
+.twi {
+    height: 8vh;
+    width: 8vh;
+}
