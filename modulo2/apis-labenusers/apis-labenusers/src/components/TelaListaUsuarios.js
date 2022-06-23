@@ -2,13 +2,68 @@ import React from "react"
 import axios from "axios"
 import styled from "styled-components"
 
-const CardUsuario = styled.div`
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
+const TelaGeral = styled.div`
+    background-image: linear-gradient(salmon, white);
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-family: Arial;
+
+`
+const ListaUser = styled.div`
+    background-color: salmon;
+    padding: 10px;
+    margin: 100px;
+    border-radius: 40px 40px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px #7e433c;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    align-items: center;
+`
+
+const CardUsuario = styled.div`
+     border: 1px solid white;
+     border-radius: 5px;
+     padding: 1px 5px 1px 5px; 
+     margin: 3px auto; 
+     width: 150px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+     button {
+        border:none;
+        background-color: salmon;
+        color: white;
+        font-size: 11px;
+     }
+
+     button:hover{
+        color: #7e433c;
+     }
+    
+`
+
+
+const ButtomPaginas = styled.button`
+    /* margin-top: 20px; */
+    margin: 20px auto;
+    display: grid;
+    align-self:center;
+    justify-self: center;
+    border: none;
+    background-color:salmon;
+    color: white;
+    font-size: 15px;
+
+    :hover {
+       color: #7e433c;
+    }
 `
 
 export default class TelaCadastro extends React.Component {
@@ -35,35 +90,39 @@ export default class TelaCadastro extends React.Component {
     }
 
     deletarUsuario = (id) => {
-        const url =  `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`
-        axios.delete(url, {
-            headers: {
-                Authorization: "tiago-fonseca-ailton"
-            }
-        })
-        .then((resp) => {
-            alert("Usuário(a) deletado com sucesso!")
-            this.pegarUsuarios()
-         })    
-        .catch((erro) => {
-            alert("Ocorreu um erro, tente novamente")
-         })
+        if (window.confirm("Tem certeza de que deseja deletar?")) {
+            const url =  `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`
+            axios.delete(url, {
+                headers: {
+                    Authorization: "tiago-fonseca-ailton"
+                }
+            })
+            .then((resp) => {
+                alert("Usuário(a) deletado com sucesso!")
+                this.pegarUsuarios()
+            })    
+            .catch((erro) => {
+                alert("Ocorreu um erro, tente novamente")
+            })
+        }    
     }
         
     render(){
         const TelaListaUsuarios = this.state.usuarios.map((user) =>{
             return <CardUsuario key={user.id}>
                 {user.name}
-                <button onClick={() => this.deletarUsuario(user.id)}>x</button>
+                <button onClick={() => this.deletarUsuario(user.id)}>deletar</button>
                 </CardUsuario>
         })
 
         return(
-            <div>
-                <button onClick={this.props.irParaCadastro}>Ir para cadastro</button>
-                <h1>Lista Usuários</h1>
-                {TelaListaUsuarios}
-            </div>
+            <TelaGeral>
+                <ListaUser>
+                     <h1>Lista Usuários</h1>
+                    {TelaListaUsuarios}
+                    <ButtomPaginas onClick={this.props.irParaCadastro}>Voltar para registro</ButtomPaginas>
+                </ListaUser>
+            </TelaGeral>
         )
     }
 }
