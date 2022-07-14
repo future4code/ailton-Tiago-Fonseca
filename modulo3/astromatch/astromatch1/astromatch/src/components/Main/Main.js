@@ -13,7 +13,7 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-`;
+`
 
 function Main() {
   const [selectedPage, setSelectedPage] = useState("choose-profile");

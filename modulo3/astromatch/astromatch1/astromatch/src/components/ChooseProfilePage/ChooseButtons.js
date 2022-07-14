@@ -16,6 +16,8 @@ const ButtonYes = styled.button`
   align-self: center;
   background-color: black;
   border-radius: 50%;
+  border: none;
+  margin-bottom: 2px;
  
   img {
     width: 50px;
@@ -30,6 +32,8 @@ const ButtonYes = styled.button`
 const ButtonNo = styled.button`
   align-self: center;
   background-color: black;
+  border: none;
+  margin-bottom: 2px;
  
  
   img {

@@ -10,6 +10,11 @@ const Container = styled.div`
    padding: 0;
    display: flex;
    flex-direction: column;
+
+   @media screen and (max-width: 480px) {
+    height: 97vh;
+    padding-top: 20px;
+      }
 `
 function App() {
   return (
