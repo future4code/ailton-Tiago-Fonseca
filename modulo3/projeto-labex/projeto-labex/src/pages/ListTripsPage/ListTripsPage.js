@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {goToHomePage} from "../../routes/coordinator"
+import {goToApplicationFormPage} from "../../routes/coordinator"
 
 const ListTripContainer = styled.div`
   display: flex;
@@ -55,27 +58,19 @@ const Job = styled.div`
  
 `;
 
-function ListTripsPage() {
+export const ListTripsPage = () => {
+  const navigate = useNavigate()
+
+  const [trips, setTrips] = useState([])
   return (
     <ListTripContainer>
       <Buttons>
-        <button>Voltar</button>
-        <button>Inscrever-se</button>
+        <button onClick={() => goToHomePage(navigate)}>Voltar</button>
+        <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
       </Buttons>
       <h1>Lista de Viagens</h1>
       <Job>
-        <p>Nome:Pabllo Ruan</p>
-        <p>Descrição:Viagem pra Lua</p>
-        <p>Planeta: Marte</p>
-        <p>Duração:60 dias</p>
-        <p>Data: 2023-10-10</p>
-      </Job>
-      <Job>
-        <p>Nome:Pabllo Ruan</p>
-        <p>Descrição:Viagem pra Lua</p>
-        <p>Planeta: Marte</p>
-        <p>Duração:60 dias</p>
-        <p>Data: 2023-10-10</p>
+        
       </Job>
       {/* <Job>
         <p>Nome:</p>
@@ -96,4 +91,3 @@ function ListTripsPage() {
   )
 }
 
-export default ListTripsPage

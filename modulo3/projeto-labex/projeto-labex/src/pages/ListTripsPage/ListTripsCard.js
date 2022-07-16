@@ -1,6 +1,6 @@
 import React from "react";
 
-function TripCard() {
+export const TripCard = () => {
   return (
     <div>
       <p>Nome:</p>
@@ -10,6 +10,4 @@ function TripCard() {
       <p>Data:</p>
     </div>
   );
-}
-
-export default TripCard;
+};

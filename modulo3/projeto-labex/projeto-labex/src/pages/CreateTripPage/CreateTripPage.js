@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {goToAdminHomePage} from "../../routes/coordinator"
+import {goToCreateTripPage} from "../../routes/coordinator"
 
 const CreateTripnContainer = styled.div`
   display: flex;
@@ -53,7 +56,9 @@ const Input = styled.div`
   }
 `;
 
-function CreateTripPage() {
+export const CreateTripPage = () => {
+  const navigate = useNavigate()
+
   return (
     <CreateTripnContainer>
       <h1>Criar Viagem</h1>
@@ -70,11 +75,10 @@ function CreateTripPage() {
         <input placeholder="Duração em dias"/>
       </Input>
       <Buttons>
-        <button>Voltar</button>
-        <button>Criar</button>
+        <button onClick={() => goToAdminHomePage(navigate)}>Voltar</button>
+        <button onClick={() => goToCreateTripPage(navigate)}>Criar</button>
       </Buttons>
     </CreateTripnContainer>
   )
 }
 
-export default CreateTripPage

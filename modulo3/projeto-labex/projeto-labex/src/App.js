@@ -1,13 +1,5 @@
-
-import HomePage from './pages/HomePage'
-import LoginPage from './pages/LoginPage'
-import TripDetailsPage from './pages/TripDetailsPage'
-import ListTripsCard from './pages/ListTripsPage/ListTripsCard'
-import ListTripsPage from './pages/ListTripsPage/ListTripsPage'
-import CreateTripPage from './pages/CreateTripPage/CreateTripPage'
-import ApplicationFormPage from './pages/ApplicationFormPage/ApplicationFormPage'
-import AdminHomePage from './pages/AdminHomePage/AdminHomePage'
 import styled from 'styled-components'
+import {Router} from './routes/Router'
 
 const AppContainer = styled.div`
   display: flex;
@@ -21,19 +13,13 @@ const AppContainer = styled.div`
 
 `
 
-function App() {
+export const App = () => {
   return (
+    
     <AppContainer>
-     <HomePage/>
-     {/* <LoginPage/> */}
-     {/* <TripDetailsPage/> */}
-     {/* <ListTripsCard/> */}
-     {/* <ListTripsPage/> */}
-     {/* <CreateTripPage/> */}
-     {/* <ApplicationFormPage/> */}
-     {/* <AdminHomePage/> */}
+      <Router/>
     </AppContainer>
   );
 }
 
-export default App;
+

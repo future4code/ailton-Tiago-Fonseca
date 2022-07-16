@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Labex from '../assets/img/labex.png'
+import Labex from '../../assets/img/labexlogo.png'
+import { useNavigate } from "react-router-dom";
+import {goToListTripsPage} from "../../routes/coordinator"
+import {goToLoginPage} from "../../routes/coordinator"
+
 
 const HomeContainer = styled.div`
   display: flex;
@@ -38,18 +42,19 @@ button {
   
 `
 
-function HomePage() {
+export const HomePage = () => {
+  const navigate = useNavigate()
+ 
   return (
     <HomeContainer>
       <Image>
       <img src={Labex}/>
       </Image>
       <Buttons>
-        <button>Ver Viagens</button>
-        <button>Área de Adm</button>
+        <button onClick={() => goToListTripsPage(navigate)}>Ver Viagens</button>
+        <button onClick={() => goToLoginPage(navigate)}>Área de Adm</button>
       </Buttons>
     </HomeContainer>
   );
 }
 
-export default HomePage;

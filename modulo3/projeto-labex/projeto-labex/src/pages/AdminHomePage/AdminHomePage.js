@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {goToHomePage} from "../../routes/coordinator"
+import {goToLoginPage} from "../../routes/coordinator"
+import {goToCreateTripPage} from "../../routes/coordinator"
+import {goToTripDatailsPage} from "../../routes/coordinator"
 
 const AdminHomeContainer = styled.div`
   display: flex;
@@ -52,17 +57,19 @@ const Jobs = styled.div`
 `;
 
 
-function AdminHomePage() {
+export const AdminHomePage = () => {
+  const navigate = useNavigate()
+  
   return (
     <AdminHomeContainer>
       <h1>Painel Administrativo</h1>
       <Buttons>
-        <button>Voltar</button>
-        <button>Criar Viagem</button>
-        <button>Logout</button>
+        <button onClick={() => goToHomePage(navigate)}>Voltar</button>
+        <button onClick={() => goToCreateTripPage(navigate)}>Criar Viagem</button>
+        <button onClick={() => goToLoginPage(navigate)}>Logout</button>
       </Buttons>
       <Jobs>
-        <p>Job</p>
+        <p onClick={() => goToTripDatailsPage(navigate)}>Job</p>
         <p>Job</p>
         <p>Job</p>
       </Jobs>
@@ -70,4 +77,3 @@ function AdminHomePage() {
   )
 }
 
-export default AdminHomePage

@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {goToListTripsPage} from "../../routes/coordinator"
+import {goToApplicationFormPage} from "../../routes/coordinator"
 
 const ApplicationContainer = styled.div`
   display: flex;
@@ -53,7 +56,9 @@ const Input = styled.div`
   }
 `;
 
-function ApplicationFormPage() {
+export const ApplicationFormPage = () => {
+  const navigate = useNavigate()
+
   return (
     <ApplicationContainer>
       <h1>Inscreva-se para uma viagem</h1>
@@ -76,11 +81,10 @@ function ApplicationFormPage() {
         </select>
       </Input>
       <Buttons>
-        <button>Voltar</button>
-        <button>Enviar</button>
+        <button onClick={() => goToListTripsPage(navigate)}>Voltar</button>
+        <button onClick={() => goToApplicationFormPage(navigate)}>Enviar</button>
       </Buttons>
     </ApplicationContainer>
   )
 }
 
-export default ApplicationFormPage

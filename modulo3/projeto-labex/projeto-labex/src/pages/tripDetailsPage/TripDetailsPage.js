@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {goToAdminHomePage} from "../../routes/coordinator"
+import axios from "axios";
 
 const TripDetailsContainer = styled.div`
   display: flex;
@@ -51,7 +54,23 @@ const Job = styled.div`
   }
 `;
 
-function TripDetailsPage() {
+export const TripDetailsPage = () => {
+  const navigate = useNavigate()
+
+  
+  useEffect(() => {
+    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-fonseca-ailton/trip/0aQ9retlt9zxpeo40G2M"
+    const header = { 
+    auth: token
+  }
+    const token = localStorage.getItem('token')
+    axios.get(url, {header}).then((response) => {
+      console.log(response.data)
+    }).catch((error) =>  {
+      console.log('Deu erro:', error.response)
+    })
+  }, [])
+
   return (
     <TripDetailsContainer>
       <h1>Baixa prioridade</h1>
@@ -63,7 +82,7 @@ function TripDetailsPage() {
         <p>Data: 2023-10-10</p>
       </Job>
       <Buttons>
-        <button>Voltar</button>
+        <button onClick={() => goToAdminHomePage(navigate)}>Voltar</button>
       </Buttons>
       <h2>Candidatos Pendentes</h2>
       <p>Texto</p>
@@ -73,4 +92,3 @@ function TripDetailsPage() {
   );
 }
 
-export default TripDetailsPage;
