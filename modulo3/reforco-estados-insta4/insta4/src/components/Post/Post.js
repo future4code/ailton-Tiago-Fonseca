@@ -1,30 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { IconeComContador } from "../IconeComContador/IconeComContador";
+import iconeCoracaoBranco from "../../img/favorite-white.svg";
+import iconeCoracaoPreto from "../../img/favorite.svg";
+import iconeComentario from "../../img/chat.png";
+import { SecaoComentario } from "../SecaoComentario/SecaoComentario";
+import iconeSalvarBranco from "../../img/bookmark-white.svg";
+import iconeSalvarPreto from "../../img/bookmark-black.svg";
 
-import {IconeComContador} from '../IconeComContador/IconeComContador'
-
-import iconeCoracaoBranco from '../../img/favorite-white.svg'
-import iconeCoracaoPreto from '../../img/favorite.svg'
-import iconeComentario from '../../img/comment_icon.svg'
-import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-import iconeMarcarBranco from '../../img/bookmark-white.svg'
-import iconeMarcarPreto from '../../img/bookmark-black.svg'
-import iconeDeCompartilhar from '../../img/share-white.svg'
-
-
-
-const PostContainer = styled.div` 
-  border: 1px solid gray;
+const PostContainer = styled.div`
+  border: 1px solid lightgrey;
+  border-radius: 10px;
   width: 300px;
   margin-bottom: 10px;
-`
+  background-color: white;
+
+`;
 
 const PostHeader = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
   padding-left: 10px;
-`
+`;
 
 const PostFooter = styled.div`
   height: 40px;
@@ -32,137 +30,105 @@ const PostFooter = styled.div`
   align-items: center;
   padding: 0 10px;
   justify-content: space-between;
-`
+`;
 
 const UserPhoto = styled.img`
   height: 30px;
   width: 30px;
   margin-right: 10px;
   border-radius: 50%;
-`
+`;
 
 const PostPhoto = styled.img`
-  width: 100%;
-`
+    height: 250px;
+  width: 300px;
+`;
 
-class Post extends React.Component {
-  state = {
-    curtido: false,
-    numeroCurtidas: 0,
-    comentando: false,
-    numeroComentarios: 0,
-    marcado: false,
-    numeroMarcado: 0,
-    compartilhado: false,
-    numeroCompartilhado: 0
-  }
+function Post(props) {
+  const [curtido, setCurtido] = useState(false);
+  const [numeroCurtidas, setNumeroCurtidas] = useState(0);
+  const [comentando, setComentando] = useState(false);
+  const [numeroComentarios, setNumeroComentarios] = useState(0);
+  const [salvar, setSalvar] = useState(false);
 
-  onClickCurtida = () => {
-    console.log('Curtiu!')
-    this.setState({
-      curtido: !this.state.curtido,
-      numeroCurtidas: !this.state.numeroCurtidas + 1
-    })
-  }
 
-  onClickMarcar = () => {
-    console.log('Marcou!')
-    this.setState({
-      marcado: !this.state.marcado,
-      numeroMarcado: !this.state.numeroMarcado + 1
-    })
-
-  }
-
-  onClickCompartilhar = () => {
-    console.log('Compartilhou!')
-    this.setState({
-      compartilhado: !this.state.compartilhado
-    })
-
-  }
-
-  onClickComentario = () => {
-    this.setState({
-      comentando: !this.state.comentando
-    })
-  }
-
-  aoEnviarComentario = () => {
-    this.setState({
-      comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
-    })
-  }
-
-  render() {
-    let iconeCurtida
-
-    if(this.state.curtido) {
-      iconeCurtida = iconeCoracaoPreto
+  const onClickSalvar = () => {
+    setSalvar(!salvar);
+  };
+      
+      
+  const onClickCurtida = () => {
+    setCurtido(!curtido)
+    if (numeroCurtidas){
+      setNumeroCurtidas(numeroCurtidas - 1) 
     } else {
-      iconeCurtida = iconeCoracaoBranco
-    }
+      setNumeroCurtidas(numeroCurtidas + 1) 
+        }
+  
+  };
 
-    let iconeMarcar
+  const onClickComentario = () => {
+    setComentando(!comentando);
+  };
 
-    if(this.state.marcado) {
-      iconeMarcar = iconeMarcarBranco
-    } else {
-      iconeMarcar = iconeMarcarPreto
-    }
+  const aoEnviarComentario = () => {
+    setComentando(false);
+    setNumeroComentarios(numeroComentarios + 1);
+  };
 
-    let iconeCompartilhar
+  let iconeCurtida;
 
-    if(this.state.compartilhado) {
-      iconeCompartilhar = iconeDeCompartilhar
-    }else {
-      iconeCompartilhar = iconeDeCompartilhar 
-    }
+  if (curtido) {
+    iconeCurtida = iconeCoracaoPreto ;
+  } else {
+    iconeCurtida = iconeCoracaoBranco;
+  }
 
-    let componenteComentario
+let iconeSalvar
 
-    if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
-    }
+if (salvar) {
+  iconeSalvar = iconeSalvarPreto ;
+} else {
+  iconeSalvar = iconeSalvarBranco;
+}
+  
+  let componenteComentario;
 
-    return <PostContainer>
+  if (comentando) {
+    componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} />;
+  }
+
+  return (
+    <PostContainer>
       <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
+        <UserPhoto src={props.fotoUsuario} alt={"Imagem do usuario"} />
+        <p>{props.nomeUsuario}</p>
       </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+      <PostPhoto src={props.fotoPost} alt={"Imagem do post"} />
 
       <PostFooter>
         <IconeComContador
           icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
+          onClickIcone={onClickCurtida}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
-          icone={iconeMarcar}
-          onClickIcone={this.onClickMarcar}
-          // valorContador={this.state.numeroMarcado}
-        />
-
-        <IconeComContador
-          icone={iconeCompartilhar}
-          onClickIcone={this.onClickCompartilhar}
-          valorContador={this.state.numeroCompartilhado}
-        />
+          icone={iconeSalvar}
+          onClickIcone={onClickSalvar}
+          />
 
         <IconeComContador
           icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
+          onClickIcone={onClickComentario}
+          valorContador={numeroComentarios}
         />
-
+        
       </PostFooter>
       {componenteComentario}
     </PostContainer>
-  }
+  );
 }
 
-export default Post
+export default Post;
