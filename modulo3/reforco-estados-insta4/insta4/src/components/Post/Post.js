@@ -9,9 +9,9 @@ import iconeSalvarBranco from "../../img/bookmark-white.svg";
 import iconeSalvarPreto from "../../img/bookmark-black.svg";
 
 const PostContainer = styled.div`
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   border-radius: 10px;
-  width: 300px;
+  width: 280px;
   margin-bottom: 10px;
   background-color: white;
 
@@ -40,8 +40,8 @@ const UserPhoto = styled.img`
 `;
 
 const PostPhoto = styled.img`
-    height: 250px;
-  width: 300px;
+    height: 210px;
+  width: 280px;
 `;
 
 function Post(props) {
@@ -97,6 +97,7 @@ if (salvar) {
   if (comentando) {
     componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} />;
   }
+
 
   return (
     <PostContainer>
