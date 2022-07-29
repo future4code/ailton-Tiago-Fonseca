@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
   background-color: #fff;
   border-bottom: 1px solid lightgrey;
 
-  a, img{
+  img{
     width: 130px;
     margin-left: 6%;
  }
@@ -161,7 +161,7 @@ function App() {
   return (
     <Container>
       <HeaderContainer>
-      <a href="App.js"><img src={Instagram}/></a>
+      <img src={Instagram}/>
         <InputContainer>
         <img src={Add}/>
           <input
